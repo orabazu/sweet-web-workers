@@ -6,15 +6,24 @@ const worker = new window.Worker("./long-runner.js");
 export default function Form() {
   const [number1, setNumber1] = useState(1);
   const [number2, setNumber2] = useState(2);
-  const asyncTotal = 0
-  const loading = false
-
-  // const total = useTakeALongTimeToAddTwoNumbers(number1, number2);
+  const [asyncTotal, setAsyncTotal] = useState(0);
+  const [loading, setloading] = useState(false);
 
   const callWebWorker = () => {
+    console.log("callWebworker");
+    setloading(true);
 
-    console.log('callWebworker')
-
+    worker.postMessage({ number1, number2 });
+    worker.onerror = (err) => {
+      console.log(err);
+    };
+    worker.onmessage = (e) => {
+      console.table(e.data);
+      const { total, perf } = e.data;
+      console.log("I am from other thread", perf);
+      setAsyncTotal(total);
+      setloading(false);
+    };
   };
 
   const total = number1 + number2;
@@ -40,10 +49,11 @@ export default function Form() {
               value={number2}
             />
           </div>
-          <h2>
-            Total:{total || 0}
-          </h2>
-          
+          <h2>Total:{total || 0}</h2>
+          <h2>Async Total:{asyncTotal || 0}</h2>
+          <button onClick={callWebWorker}>
+            {loading ? "Loading ..." : "Call Web Worker"}
+          </button>
         </div>
       </div>
     </div>
