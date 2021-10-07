@@ -8,8 +8,8 @@
   justify-content: center;
 }
 .row {
-  width: 750px;
-  height: 750px;
+  width: 500px;
+  height: 500px;
   padding-top: 0;
   padding-bottom: 0;
   align-items: center;
@@ -46,20 +46,3 @@
   flex-direction: column;
 }
 
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
