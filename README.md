@@ -1,5 +1,10 @@
+
+
 # Dead simple web workers ⚙️
-This repo is bunch of dead simple examples on how to use web workers with react. 
+This repo is bunch of dead
+ simple examples on how to use web workers with react. 
+
+![Screen Shot 2021-10-13 at 18 01 55](https://user-images.githubusercontent.com/812622/137160049-2358449e-8bbf-4bfb-ba38-d915e17764c6.png)
 
 ## What's inside 
 There are two implementations `vanilla` and [`comlink`](https://github.com/GoogleChromeLabs/comlink). First one is vanilla JS approach while the latter one shows how to use it with TS in a more promise-like way.
