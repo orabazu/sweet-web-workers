@@ -16,7 +16,6 @@ Use `vanilla-step1` to practice, and `vanilla-step2` to inspect implementation
 
 ## 2- Comlink and TS 🚗
 Use `comlink-step1` to practice, and `comlink-step2` to inspect implementation 
-asdasdasdsads
 #### Where is worker
 👀 -> `src/workers/long-runner/long-runner.ts`
 
